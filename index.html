@@ -34,12 +34,32 @@ Oh-oh... time to double check this.
 <h2>The test</h2>
 So I "View/Source" of their "See for yourself" page... and I quickly locate their "proof" videos. Sure enough, they are MP4 files:
 <pre style="background:#dfd;">
+
 bash$ wget 'http://us.raystream.com/_inc/media/ray_480p.mp4'
 bash$ wget 'http://us.raystream.com/_inc/media/ray_480p_normal.mp4'
 bash$ ls -l
 -rw-r--r-- 1 ihatelaywers users  28467321 Oct 27 20:37 ray_480p.mp4
 -rw-r--r-- 1 ihatelaywers users 224248391 Nov  2 17:06 ray_480p_normal.mp4
+
 </pre>
-Oh God, the timestamps are *really* recent. Never mind, proceeding...
+Hmm... I see a 8x reduction, so their claim seems to hold so far. Doesn't it?
+<p>
+Let me do a quick transcode - checking <a href="http://www.mplayerhq.hu/DOCS/HTML/en/menc-feat-x264.html">mencoder</a> x264 settings, taking from the bottom of the page ("Very high quality"), and on we go...
+<pre style="background:#dfd;">
+
+bash$ mencoder  -ovc x264 -oac mp3lame -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b  -o hoax.avi ray_480p_normal.mp4 
+bash$ ls -l
+-rw-r--r-- 1 ihatelaywers users  26658020 Nov  8 16:51 hoax.avi
+-rw-r--r-- 1 ihatelaywers users  28467321 Oct 27 20:37 ray_480p.mp4
+-rw-r--r-- 1 ihatelaywers users 224248391 Nov  2 17:06 ray_480p_normal.mp4
+
+</pre>
+Oh God. Oh God.
+<p>
+These people are fraudsters!
+<p>
+How in God's name <a href="http://finance.yahoo.com/q?s=RAYS.OB">do they sell stock</a>?!
+<p>
+I hate this world. And lawyers and DMCA, too. OK, time to setup a one off account on Yahoo and Github...
 </body>
 </html>
