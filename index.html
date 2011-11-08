@@ -24,7 +24,7 @@ Nope:
 </div>
 OK, at this point, if you know anything about video compression, you start
 to see a red flag waving in your face. The only way one can encode videos
-so that they (a) play on mobile phones, and (b) need no playback modifications (codecs, etC) is... if you use an existing codec.
+so that they (a) play on mobile phones, and (b) need no playback modifications (codecs, etc) is... if you use an existing codec.
 <p>
 But how can an existing codec compress to 10% of what it... already can do?
 <p>
@@ -42,10 +42,12 @@ bash$ ls -l
 </pre>
 Hmm... I see a 8x reduction, so their claim seems to hold so far. Doesn't it?
 <p>
-Let me do a quick transcode - checking <a href="http://www.mplayerhq.hu/DOCS/HTML/en/menc-feat-x264.html">mencoder</a> x264 settings, taking from the bottom of the page ("Very high quality"), and on we go...
+Let me do a quick transcode - checking <a href="http://www.mplayerhq.hu/DOCS/HTML/en/menc-feat-x264.html">mencoder</a> x264 settings, use recipe from the bottom of that page ("Very high quality"), and on we go...
 <pre style="background:#dfd;">
 
-bash$ mencoder  -ovc x264 -oac mp3lame -x264encopts subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b  -o hoax.avi ray_480p_normal.mp4 
+bash$ mencoder  -ovc x264 -oac mp3lame -x264encopts \
+	subq=6:partitions=all:8x8dct:me=umh:frameref=5:bframes=3:b_pyramid=normal:weight_b  \
+	-o hoax.avi ray_480p_normal.mp4 
 bash$ ls -l
 -rw-r--r-- 1 ihatelaywers users  26658020 Nov  8 16:51 hoax.avi
 -rw-r--r-- 1 ihatelaywers users  28467321 Oct 27 20:37 ray_480p.mp4
@@ -58,6 +60,6 @@ These people are fraudsters!
 <p>
 How in God's name <a href="http://finance.yahoo.com/q?s=RAYS.OB">do they sell stock</a>?!
 <p>
-I hate this world. And lawyers and DMCA, too. OK, time to setup a one off account on Yahoo and Github...
+I hate this world. And lawyers and DMCA, too. OK, time to setup a one-off account on Yahoo and Github...
 </body>
 </html>
