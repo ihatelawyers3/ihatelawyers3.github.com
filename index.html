@@ -20,7 +20,26 @@ claims that they can revolutionize Web video, by...
 Indeed! How interesting. A new codec, maybe?<p>
 Nope:
 <quote>
+"No playback modifications required (codec, browser player, set top box, smart phones, etc.)"
+...
 "Our breakthrough optimization technology works flawlessly with modern cell phones, delivering Mobile TV in a never-before-seen video quality over standard 3G connections."
 </quote>
+OK, at this point, if you know anything about video compression, you start
+to see a red flag waving in your face. The only way one can encode videos
+so that they (a) play on mobile phones, and (b) need no playback modifications (codecs, etC) is... if you use an existing codec.
+<p>
+But how can an existing codec compress to 10% of what it... already can do?
+<p>
+Oh-oh... time to double check this.
+<h2>The test</h2>
+So I "View/Source" of their "See for yourself" page... and I quickly locate their "proof" videos. Sure enough, they are MP4 files:
+<pre style="background:#dfd;">
+bash$ wget 'http://us.raystream.com/_inc/media/ray_480p.mp4'
+bash$ wget 'http://us.raystream.com/_inc/media/ray_480p_normal.mp4'
+bash$ ls -l
+-rw-r--r-- 1 ihatelaywers users  28467321 Oct 27 20:37 ray_480p.mp4
+-rw-r--r-- 1 ihatelaywers users 224248391 Nov  2 17:06 ray_480p_normal.mp4
+</pre>
+Oh God, the timestamps are *really* recent. Never mind, proceeding...
 </body>
 </html>
